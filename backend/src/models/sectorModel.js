@@ -1,5 +1,7 @@
-// src/models/sectorModel.js
+const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
+
+const dbPath = path.resolve(__dirname, '../db/database.db');
 
 class Sector {
   constructor(id, name) {
@@ -9,7 +11,7 @@ class Sector {
 }
 
 function initializeDB() {
-  const db = new sqlite3.Database('./db/database.db', (err) => {
+  const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
       console.error('Erro ao abrir o banco de dados:', err.message);
     } else {

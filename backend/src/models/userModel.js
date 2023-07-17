@@ -1,5 +1,7 @@
-// src/models/userModel.js
+const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
+
+const dbPath = path.resolve(__dirname, '../db/database.db');
 
 class User {
   constructor(id, username, password, accessLevel, departmentId) {
@@ -12,7 +14,7 @@ class User {
 }
 
 function initializeDB() {
-  const db = new sqlite3.Database('./db/database.db', (err) => {
+  const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
       console.error('Erro ao abrir o banco de dados:', err.message);
     } else {
