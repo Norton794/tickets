@@ -1,7 +1,7 @@
 const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
 
-const dbPath = path.resolve(__dirname, '../db/database.db');
+const dbPath = path.resolve(__dirname, '../db/database.sqlite');
 
 class User {
   constructor(id, username, password, accessLevel, departmentId) {

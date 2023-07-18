@@ -1,7 +1,7 @@
 const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
 
-const dbPath = path.resolve(__dirname, '../db/database.db');
+const dbPath = path.resolve(__dirname, '../db/database.sqlite');
 
 class Ticket {
   constructor(id, title, description, status, priority, assignedTo, origin) {
@@ -26,8 +26,8 @@ function initializeDB() {
           id INTEGER PRIMARY KEY,
           title TEXT,
           description TEXT,
-          status TEXT,
-          priority TEXT,
+          status INTEGER,
+          priority INTEGER,
           assignedTo INTEGER,
           origin INTEGER,
           FOREIGN KEY(assignedTo) REFERENCES departments(id),

@@ -3,7 +3,7 @@ const Ticket = require('../models/ticketModel');
 const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
 
-const dbPath = path.resolve(__dirname, '../db/database.db');
+const dbPath = path.resolve(__dirname, '../db/database.sqlite');
 
 async function getAllTickets() {
   return new Promise((resolve, reject) => {
